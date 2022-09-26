@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/name"
+        android:hint="Enter Person Name"
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="15pt"
+        android:layout_marginRight="40dp"
+        ></EditText>
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/message"
+        android:hint="Enter Message for the Person"
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="15pt"
+        android:layout_marginRight="40dp"
+        android:layout_below="@+id/name"
+        ></EditText>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Send Message"
+        android:layout_below="@+id/message"
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="15pt"
+        android:layout_marginRight="40dp"
+        android:id="@+id/save"></Button>
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Cancel"
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="15pt"
+        android:layout_marginRight="40dp"
+        android:layout_below="@+id/save"
+        android:id="@+id/cancel"></Button>
+</RelativeLayout>

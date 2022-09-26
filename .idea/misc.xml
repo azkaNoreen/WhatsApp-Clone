@@ -3,7 +3,11 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Semester6/MC/HazeMobile/WhatsAppClone/app/src/main/res/drawable/ic_baseline_chat_24.xml" value="0.1645" />
         <entry key="..\:/Semester6/MC/HazeMobile/WhatsAppClone/app/src/main/res/layout/activity_main.xml" value="0.20416666666666666" />
+        <entry key="..\:/Semester6/MC/HazeMobile/WhatsAppClone/app/src/main/res/layout/chatdialoglayout.xml" value="0.20416666666666666" />
+        <entry key="..\:/Semester6/MC/HazeMobile/WhatsAppClone/app/src/main/res/layout/fragment_chat.xml" value="0.20416666666666666" />
+        <entry key="..\:/Semester6/MC/HazeMobile/WhatsAppClone/app/src/main/res/layout/singlechat.xml" value="0.20416666666666666" />
         <entry key="..\:/Semester6/MC/HazeMobile/WhatsAppClone/app/src/main/res/menu/whatsappmenu.xml" value="0.20416666666666666" />
       </map>
     </option>
