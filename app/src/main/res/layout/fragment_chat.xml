@@ -15,10 +15,6 @@
         android:id="@+id/chatRecyclerView"
         >
     </androidx.recyclerview.widget.RecyclerView>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        >
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:id="@+id/openchat"
@@ -28,6 +24,7 @@
             android:layout_gravity="end|bottom"
             android:layout_margin="16dp"
             android:src="@drawable/ic_baseline_add_24"
-            app:backgroundTint="#128C7E" />
-    </LinearLayout>
+            app:backgroundTint="#128C7E"
+            app:tint="@android:color/white"
+            />
 </FrameLayout>

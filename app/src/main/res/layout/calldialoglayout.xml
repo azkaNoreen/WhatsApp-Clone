@@ -17,7 +17,7 @@
         android:id="@+id/type"
         android:hint="Enter Call Type"
         android:layout_marginLeft="40dp"
-        android:layout_marginTop="15pt"
+        android:layout_marginTop="5pt"
         android:layout_marginRight="40dp"
         android:layout_below="@+id/name"
         ></EditText>
@@ -27,7 +27,7 @@
     android:id="@+id/duration"
     android:hint="Enter Call Duration"
     android:layout_marginLeft="40dp"
-    android:layout_marginTop="15pt"
+    android:layout_marginTop="5pt"
     android:layout_marginRight="40dp"
     android:layout_below="@+id/type"
     ></EditText>
@@ -39,7 +39,7 @@
         android:text="Send Call"
         android:layout_below="@+id/duration"
         android:layout_marginLeft="40dp"
-        android:layout_marginTop="15pt"
+        android:layout_marginTop="5pt"
         android:layout_marginRight="40dp"
         android:id="@+id/save"></Button>
     <Button
@@ -47,7 +47,7 @@
         android:layout_height="wrap_content"
         android:text="Cancel"
         android:layout_marginLeft="40dp"
-        android:layout_marginTop="15pt"
+        android:layout_marginTop="5pt"
         android:layout_marginRight="40dp"
         android:layout_below="@+id/save"
         android:id="@+id/cancel"></Button>

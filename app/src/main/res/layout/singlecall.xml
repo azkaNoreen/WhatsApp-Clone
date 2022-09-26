@@ -2,53 +2,70 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content">
-    <ImageView
-        android:layout_width="80dp"
-        android:layout_height="80dp"
-        android:id="@+id/dp"
-        android:layout_margin="12dp"
-        android:src="@mipmap/ic_launcher">
-    </ImageView>
-    <TextView
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/name"
-        android:text="This is Student"
-        android:textSize="20sp"
-        android:layout_toRightOf="@+id/dp"
-        android:layout_marginTop="12dp"
-        android:textStyle="bold"
-        android:textColor="@color/black"
-        ></TextView>
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/type"
-        android:text="This is Student"
-        android:textSize="16sp"
-        android:layout_toRightOf="@+id/dp"
-        android:layout_below="@+id/name"
-        android:textColor="@color/black"
-        ></TextView>
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/duration"
-        android:text="This is Student"
-        android:textSize="16sp"
-        android:layout_toRightOf="@+id/dp"
-        android:layout_below="@+id/type"
-        android:textColor="#B80101"
-        ></TextView>
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/date"
-        android:text="This is Student"
-        android:textSize="16sp"
-        android:layout_toRightOf="@+id/dp"
-        android:layout_below="@+id/duration"
-        android:textColor="#B80101"
-        ></TextView>
+        android:orientation="horizontal"
+        >
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:id="@+id/dp"
+            android:layout_margin="14dp"
+            android:src="@color/black">
+        </de.hdodenhof.circleimageview.CircleImageView>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            >
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/name"
+                android:text="This is Student"
+                android:textSize="18sp"
+                android:layout_toRightOf="@+id/dp"
+                android:layout_marginTop="12dp"
+                android:textColor="@color/black"
+                ></TextView>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center"
+                >
+                <ImageView
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:id="@+id/type"
+                    android:src="@mipmap/ic_launcher"
+                    android:layout_below="@+id/name"
+                    android:layout_margin="4dp"></ImageView>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/duration"
+                    android:text="This is Student"
+                    android:textSize="16sp"
+                    android:layout_below="@+id/type"
+                    android:textColor="@color/black"
+                    android:layout_margin="4dp"
+                    ></TextView>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/date"
+                    android:text="This is Student"
+                    android:textSize="16sp"
+                    android:layout_below="@+id/duration"
+                    android:textColor="#2196F3"
+                    android:layout_margin="4dp"
+
+                    ></TextView>
+            </LinearLayout>
+
+        </LinearLayout>
+    </LinearLayout>
 
 </RelativeLayout>

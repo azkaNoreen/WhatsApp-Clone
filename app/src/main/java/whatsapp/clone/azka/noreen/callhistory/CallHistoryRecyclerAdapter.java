@@ -32,7 +32,7 @@ public class CallHistoryRecyclerAdapter extends RecyclerView.Adapter<RecyclerVie
         CallHistoryRecyclerAdapter.CallHolder callHolder= (CallHistoryRecyclerAdapter.CallHolder) holder;
 
         callHolder.Name.setText(st.getPersonName());
-        callHolder.Type.setText(st.getCallType());
+//        callHolder.Type.setText(st.getCallType());
         callHolder.Duration.setText(st.getCallDuration());
         callHolder.Date.setText(st.getCallDate()+"");
 
@@ -57,7 +57,7 @@ public class CallHistoryRecyclerAdapter extends RecyclerView.Adapter<RecyclerVie
     public static class CallHolder extends RecyclerView.ViewHolder{
 
         TextView Name;
-        TextView Type;
+        ImageView Type;
         TextView Duration;
         TextView Date;
 
