@@ -12,6 +12,8 @@ import android.widget.Toast;
 
 import com.google.android.material.tabs.TabLayout;
 
+import whatsapp.clone.azka.noreen.callhistory.CallHistoryFragment;
+
 public class MainActivity extends AppCompatActivity {
     Toolbar toolbar;
     ViewPager viewPager;
