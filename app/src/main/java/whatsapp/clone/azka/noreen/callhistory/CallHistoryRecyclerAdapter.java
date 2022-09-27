@@ -1,5 +1,6 @@
 package whatsapp.clone.azka.noreen.callhistory;
 
+import android.content.Intent;
 import android.text.format.DateFormat;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -14,6 +15,8 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.Date;
 import java.util.List;
 
+import whatsapp.clone.azka.noreen.CallDetail;
+import whatsapp.clone.azka.noreen.ChatDetail;
 import whatsapp.clone.azka.noreen.ChatEntity;
 import whatsapp.clone.azka.noreen.ChatRecyclerAdapter;
 import whatsapp.clone.azka.noreen.R;
@@ -56,8 +59,12 @@ public class CallHistoryRecyclerAdapter extends RecyclerView.Adapter<RecyclerVie
         callHolder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(view.getContext(), st.getPersonName(), Toast.LENGTH_SHORT).show();
-            }
+                Intent in=new Intent(view.getContext(), CallDetail.class);
+                in.putExtra("Name",st.getPersonName());
+                in.putExtra("Type",st.getCallType());
+                in.putExtra("Duration",st.getCallDuration());
+                in.putExtra("Date",st.getCallDate());
+                view.getContext().startActivity(in);            }
         });
     }
 

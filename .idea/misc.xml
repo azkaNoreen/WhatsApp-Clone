@@ -4,6 +4,8 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Semester6/MC/HazeMobile/WhatsAppClone/app/src/main/res/drawable/ic_baseline_chat_24.xml" value="0.1645" />
+        <entry key="..\:/Semester6/MC/HazeMobile/WhatsAppClone/app/src/main/res/layout/activity_call_detail.xml" value="0.20416666666666666" />
+        <entry key="..\:/Semester6/MC/HazeMobile/WhatsAppClone/app/src/main/res/layout/activity_chat_detail.xml" value="0.19010416666666666" />
         <entry key="..\:/Semester6/MC/HazeMobile/WhatsAppClone/app/src/main/res/layout/activity_main.xml" value="0.20416666666666666" />
         <entry key="..\:/Semester6/MC/HazeMobile/WhatsAppClone/app/src/main/res/layout/activity_splash.xml" value="0.20416666666666666" />
         <entry key="..\:/Semester6/MC/HazeMobile/WhatsAppClone/app/src/main/res/layout/calldialoglayout.xml" value="0.20416666666666666" />

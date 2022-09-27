@@ -1,5 +1,6 @@
 package whatsapp.clone.azka.noreen;
 
+import android.content.Intent;
 import android.text.format.DateFormat;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -45,7 +46,12 @@ public class ChatRecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
         chatViewHolder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(view.getContext(), st.getPersonName(), Toast.LENGTH_SHORT).show();
+                Intent in=new Intent(view.getContext(), ChatDetail.class);
+                in.putExtra("Name",st.getPersonName());
+                in.putExtra("Message",st.getMessageDetail());
+                in.putExtra("Date",st.getTime());
+
+                view.getContext().startActivity(in);
             }
         });
     }
