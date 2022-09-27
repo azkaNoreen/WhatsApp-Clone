@@ -63,7 +63,7 @@ public class CallHistoryRecyclerAdapter extends RecyclerView.Adapter<RecyclerVie
                 in.putExtra("Name",st.getPersonName());
                 in.putExtra("Type",st.getCallType());
                 in.putExtra("Duration",st.getCallDuration());
-                in.putExtra("Date",st.getCallDate());
+                in.putExtra("Date",dateString);
                 view.getContext().startActivity(in);            }
         });
     }

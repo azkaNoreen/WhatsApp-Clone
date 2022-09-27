@@ -23,10 +23,10 @@ public class CallDetail extends AppCompatActivity {
         String CourseTecaher=getIntent().getStringExtra("Duration");
         String CourseYear=getIntent().getStringExtra("Date");
 
-        cn.setText("Student Name: "+CourseName);
-        cd.setText("Student Email: "+CourseDep);
-        ct.setText("Student Phone: "+CourseTecaher);
-        cy.setText("Student Teacher: "+CourseYear);
+        cn.setText("Person Name: "+CourseName);
+        cd.setText("Call Type: "+CourseDep);
+        ct.setText("Call Duration: "+CourseTecaher);
+        cy.setText("Call Date"+CourseYear);
 
 
     }

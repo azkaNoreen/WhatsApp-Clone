@@ -21,8 +21,8 @@ public class ChatDetail extends AppCompatActivity {
         String CourseDep=getIntent().getStringExtra("Message");
         String CourseYear=getIntent().getStringExtra("Date");
 
-        cn.setText("Student Name: "+CourseName);
-        cd.setText("Student Email: "+CourseDep);
-        cy.setText("Student Teacher: "+CourseYear);
+        cn.setText("Person Name: "+CourseName);
+        cd.setText("Message: "+CourseDep);
+        cy.setText("Chat Date: "+CourseYear);
     }
 }

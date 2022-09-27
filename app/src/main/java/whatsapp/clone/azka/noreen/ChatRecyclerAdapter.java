@@ -49,7 +49,7 @@ public class ChatRecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
                 Intent in=new Intent(view.getContext(), ChatDetail.class);
                 in.putExtra("Name",st.getPersonName());
                 in.putExtra("Message",st.getMessageDetail());
-                in.putExtra("Date",st.getTime());
+                in.putExtra("Date",dateString);
 
                 view.getContext().startActivity(in);
             }
