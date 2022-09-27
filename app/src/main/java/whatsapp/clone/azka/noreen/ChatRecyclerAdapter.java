@@ -1,5 +1,6 @@
 package whatsapp.clone.azka.noreen;
 
+import android.text.format.DateFormat;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,8 +11,12 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
+import java.util.Locale;
 
 public class ChatRecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
     List<ChatEntity> chatArrayList;
@@ -27,9 +32,15 @@ public class ChatRecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
         ChatEntity st=chatArrayList.get(position);
         ChatRecyclerAdapter.ChatHolder chatViewHolder= (ChatRecyclerAdapter.ChatHolder) holder;
 
+        String longV = st.getTime().toString();
+        long millisecond = Long.parseLong(longV);
+        // or you already have long value of date, use this instead of milliseconds variable.
+        String dateString = DateFormat.format("dd-MMM-yyyy", new Date(millisecond)).toString();
+
         chatViewHolder.Name.setText(st.getPersonName());
         chatViewHolder.Message.setText(st.getMessageDetail());
-        chatViewHolder.Time.setText(st.getTime().toString());
+        chatViewHolder.Time.setText(dateString);
+
 
         chatViewHolder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override

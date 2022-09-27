@@ -21,8 +21,13 @@ import android.widget.Toast;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
+import java.sql.Time;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
+import java.util.Locale;
 
 public class ChatFragment extends Fragment {
     RecyclerView recyclerView;
@@ -78,14 +83,28 @@ public class ChatFragment extends Fragment {
         dialogButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Log.i("name",text.getText().toString());
-                Log.i("mess",stext.getText().toString());
-                Toast.makeText(getContext(), "salsioj", Toast.LENGTH_SHORT).show();
+//                Log.i("name",text.getText().toString());
+//                Log.i("mess",stext.getText().toString());
 
                 WhatsAppDatabase db=
                         Room.databaseBuilder(requireContext(), WhatsAppDatabase.class,
                                 "WhatsAppDatabase").allowMainThreadQueries().build();
-                ChatEntity chat=new ChatEntity(text.getText().toString(),stext.getText().toString(),43233L);
+                //get Current Date
+                SimpleDateFormat sdf = new SimpleDateFormat("dd-MMM-yyyy", Locale.getDefault());
+                String currentDateandTime = sdf.format(new Date());
+                //convert to long
+                SimpleDateFormat sdfa = new SimpleDateFormat("dd-MMM-yyyy");
+                Date date = null;
+                try {
+                    date = sdfa.parse(currentDateandTime);
+                } catch (ParseException e) {
+                    e.printStackTrace();
+                }
+                long startDate = date.getTime();
+
+//                Toast.makeText(getContext(), currentDateandTime+"---"+startDate+"",Toast.LENGTH_SHORT).show();
+
+                ChatEntity chat=new ChatEntity(text.getText().toString(),stext.getText().toString(),startDate);
                 db.chatDAO().insertChat(chat);
                 getData();
 
