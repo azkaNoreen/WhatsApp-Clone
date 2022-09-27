@@ -40,7 +40,7 @@ public class MainActivity extends AppCompatActivity {
 
         int menuItemId=item.getItemId();
         if(menuItemId==R.id.quit){
-            Toast.makeText(this, "Serach Clicked", Toast.LENGTH_SHORT).show();
+            finish();
         }
         return super.onOptionsItemSelected(item);
     }

@@ -20,7 +20,11 @@ import android.widget.Toast;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
+import java.util.Locale;
 
 import whatsapp.clone.azka.noreen.ChatEntity;
 import whatsapp.clone.azka.noreen.ChatRecyclerAdapter;
@@ -89,12 +93,34 @@ public class CallHistoryFragment extends Fragment {
                 WhatsAppDatabase db=
                         Room.databaseBuilder(requireContext(), WhatsAppDatabase.class,
                                 "WhatsAppDatabase").allowMainThreadQueries().build();
-                CallHistoryEntity call=new CallHistoryEntity(text.getText().toString(),type.getText().toString(),duration.getText().toString(),43233L);
+                //get Current Date
+                SimpleDateFormat sdf = new SimpleDateFormat("dd-MMM-yyyy", Locale.getDefault());
+                String currentDateandTime = sdf.format(new Date());
+                //convert to long
+                SimpleDateFormat sdfa = new SimpleDateFormat("dd-MMM-yyyy");
+                Date date = null;
+                try {
+                    date = sdfa.parse(currentDateandTime);
+                } catch (ParseException e) {
+                    e.printStackTrace();
+                }
+                long startDate = date.getTime();
+                boolean correctType=false;
+                String callType=type.getText().toString().toLowerCase();
+                if(!correctType){
+                if(!(callType.equals("incoming")||callType.equals("outgoing")||callType.equals("missed call"))){
+                    Toast.makeText(activity, "please enter correct call type", Toast.LENGTH_SHORT).show();
+                    correctType=false;
+                    showDialog(getActivity());
+                    dialog.dismiss();
+                }
+                else{
+                CallHistoryEntity call=new CallHistoryEntity(text.getText().toString(),type.getText().toString(),duration.getText().toString(),startDate);
                 db.callHistoryDAO().insertCallHistory(call);
                 getData();
-
-
+                correctType=true;
                 dialog.dismiss();
+                }}
             }
         });
         Button dialogButtonCancel = (Button) dialog.findViewById(R.id.cancel);

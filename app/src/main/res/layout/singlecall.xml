@@ -36,8 +36,8 @@
                 android:gravity="center"
                 >
                 <ImageView
-                    android:layout_width="24dp"
-                    android:layout_height="24dp"
+                    android:layout_width="18dp"
+                    android:layout_height="18dp"
                     android:id="@+id/type"
                     android:src="@mipmap/ic_launcher"
                     android:layout_below="@+id/name"

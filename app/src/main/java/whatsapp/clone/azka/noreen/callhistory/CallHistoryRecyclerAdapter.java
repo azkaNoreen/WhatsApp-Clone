@@ -1,5 +1,6 @@
 package whatsapp.clone.azka.noreen.callhistory;
 
+import android.text.format.DateFormat;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,6 +11,7 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import java.util.Date;
 import java.util.List;
 
 import whatsapp.clone.azka.noreen.ChatEntity;
@@ -31,10 +33,25 @@ public class CallHistoryRecyclerAdapter extends RecyclerView.Adapter<RecyclerVie
         CallHistoryEntity st=callArrayList.get(position);
         CallHistoryRecyclerAdapter.CallHolder callHolder= (CallHistoryRecyclerAdapter.CallHolder) holder;
 
+        String longV = st.getCallDate().toString();
+        long millisecond = Long.parseLong(longV);
+        // or you already have long value of date, use this instead of milliseconds variable.
+        String dateString = DateFormat.format("dd-MMM-yyyy", new Date(millisecond)).toString();
+
+        if(st.getCallType().equals("incoming")){
+            callHolder.Type.setImageResource(R.drawable.ic_baseline_call_received_24);
+        }
+        else if(st.getCallType().equals("outgoing")){
+            callHolder.Type.setImageResource(R.drawable.ic_baseline_call_made_24);
+        }
+        else{
+            callHolder.Type.setImageResource(R.drawable.ic_baseline_phone_missed_24);
+        }
+
         callHolder.Name.setText(st.getPersonName());
 //        callHolder.Type.setText(st.getCallType());
         callHolder.Duration.setText(st.getCallDuration());
-        callHolder.Date.setText(st.getCallDate()+"");
+        callHolder.Date.setText(dateString);
 
         callHolder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -60,7 +77,6 @@ public class CallHistoryRecyclerAdapter extends RecyclerView.Adapter<RecyclerVie
         ImageView Type;
         TextView Duration;
         TextView Date;
-
 
         ImageView image;
         public CallHolder(@NonNull View itemView) {
